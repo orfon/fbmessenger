@@ -1,0 +1,31 @@
+{
+    "name": "fbmessenger",
+    "version": "1.0",
+    "description": "Bot API for Facebook Messenger.",
+    "keywords": [
+        "facebook",
+        "messenger",
+        "bots",
+        "chatbots"
+    ],
+    "homepage": "https://github.com/orfon/fbmessenger/",
+    "author": {
+        "name": "Philipp Naderer",
+        "email": "philipp.naderer@orf.at",
+        "web": "http://github.com/orfon/"
+    },
+    "contributors": [],
+    "repositories": [{
+        "type": "git",
+        "url": "https://github.com/orfon/fbmessenger.git"
+    }],
+    "bugs": "http://github.com/orfon/fbmessenger/issues",
+    "licenses": [{
+        "type": "Apache License Version 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+    }],
+    "engines": {
+        "ringojs": ">= 0.12"
+    },
+    "main": "./lib/fbmessenger"
+}
