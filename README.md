@@ -11,7 +11,7 @@ This package is licensed under the Apache License Version 2.0. You can
 copy, modify and distribute the bot client in source and/or binary form.
 Please mark all modifications clearly as being the work of the modifier.
 
-# Changelog
+## Changelog
 
 - 2.0.0 - implements Messenger Platform v1.2, adds `sendReusableAttachment()` method, breaking change: new signatures of all  `sendXyzAttachment()` methods to send reusable attachments
 - 1.0.0 - initial release for Messenger Platform v1.1
