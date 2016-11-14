@@ -13,5 +13,6 @@ Please mark all modifications clearly as being the work of the modifier.
 
 ## Changelog
 
+- 2.1.0 - minor bugfix in the attachment methods
 - 2.0.0 - implements Messenger Platform v1.2, adds `sendReusableAttachment()` method, breaking change: new signatures of all  `sendXyzAttachment()` methods to send reusable attachments
 - 1.0.0 - initial release for Messenger Platform v1.1
