@@ -35,6 +35,7 @@ Please mark all modifications clearly as being the work of the modifier.
 
 ## Changelog
 
+- 2.3.0 - support for batched requests to the Graph API
 - 2.2.0 - adds support for Messenger Platform v1.3, new method `isReferral()` in utils to detect referral webhook calls
 - 2.1.0 - minor bugfix in the attachment methods
 - 2.0.0 - implements Messenger Platform v1.2, adds `sendReusableAttachment()` method, breaking change: new signatures of all  `sendXyzAttachment()` methods to send reusable attachments
