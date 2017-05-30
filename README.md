@@ -27,6 +27,13 @@ bot.sendButtonTemplate(recipientId, "Hello!", [
 
 ```
 
+## Non-Goals
+
+The following APIs and methods are not implemented and not planned to be anytime soon:
+
+* ID Matching API
+* Payments
+
 ## License
 
 This package is licensed under the Apache License Version 2.0. You can
@@ -35,6 +42,7 @@ Please mark all modifications clearly as being the work of the modifier.
 
 ## Changelog
 
+- 3.0.0 - implements changes for Messenger Platform v1.4 and v2.0, changed parameter order for templates, added message tags and changed parameter order for `sendXYZ()` methods, removed old thread APIs, added basic test bot
 - 2.3.0 - support for batched requests to the Graph API
 - 2.2.0 - adds support for Messenger Platform v1.3, new method `isReferral()` in utils to detect referral webhook calls
 - 2.1.0 - minor bugfix in the attachment methods
