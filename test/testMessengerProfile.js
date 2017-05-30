@@ -173,6 +173,43 @@ exports.testMessengerProfileAPI = function() {
     }
 };
 
+exports.testTargetAudience = function() {
+    assert.isTrue(env["FACEBOOK_PAGE_TOKEN"] != null, "Page token is missing!");
+    const bot = new FBMessenger(env["FACEBOOK_PAGE_TOKEN"], false);
+
+    try {
+        bot.setAudienceType("custom", {
+            "whitelist": ["DE", "AT", "CH"]
+        })
+    } catch (e) {
+        assert.fail("Something thrown an error! " + e);
+    }
+};
+
+exports.testWhitelistDomains = function() {
+    assert.isTrue(env["FACEBOOK_PAGE_TOKEN"] != null, "Page token is missing!");
+    const bot = new FBMessenger(env["FACEBOOK_PAGE_TOKEN"], false);
+
+    try {
+        bot.whitelistDomains(["https://dev.orf.at", "https://sport.orf.at"]);
+    } catch (e) {
+        assert.fail("Something thrown an error! " + e);
+    }
+};
+
+exports.testDeleteProfileFields = function() {
+    assert.isTrue(env["FACEBOOK_PAGE_TOKEN"] != null, "Page token is missing!");
+    const bot = new FBMessenger(env["FACEBOOK_PAGE_TOKEN"], false);
+
+    try {
+        bot.whitelistDomains(["https://dev.orf.at", "https://sport.orf.at"]);
+        const response = bot.deleteProfileFields(["whitelisted_domains"]);
+        assert.equal(response.result, "success");
+    } catch (e) {
+        assert.fail("Something thrown an error! " + e);
+    }
+};
+
 if (require.main === module) {
     require("system").exit(require("test").run(exports));
 }
