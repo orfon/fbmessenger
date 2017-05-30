@@ -1,0 +1,21 @@
+{
+  "name": "birdiebot",
+  "version": "3.0",
+  "description": "Messenger test bot",
+  "keywords": [
+    "messenger", "chatbot"
+  ],
+  "author": {
+    "name":  "Philipp Naderer",
+    "web":   "http://dev.orf.at",
+    "email": "philipp.naderer@orf.at"
+  },
+  "dependencies": {
+    "httpserver": ">=0.3.0",
+    "stick": ">=0.7.0"
+  },
+  "engines": {
+    "ringojs": ">=1.1.0"
+  },
+  "main": "./main.js"
+}
