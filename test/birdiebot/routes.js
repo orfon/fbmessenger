@@ -134,6 +134,23 @@ const processText = function(text, message) {
                 "payload": "vote:clinton"
             }
         ]);
+
+        bot.sendButtonTemplate(message.sender.id, "Need a link to share?", [
+            {
+                "type": "web_url",
+                "title": "dev.ORF.at",
+                "url": "http://dev.orf.at"
+            }
+        ], true);
+
+        bot.sendButtonTemplate(message.sender.id, "Need a link not to share?", [
+            {
+                "type": "web_url",
+                "title": "dev.ORF.at",
+                "url": "http://dev.orf.at"
+            }
+        ], false);
+
     } else if (strings.contains(text, "advanced")) {
         bot.sendAdvancedTemplate(message.sender.id, {
             "template_type": "airline_checkin",
