@@ -88,9 +88,20 @@ exports.testMessengerProfileAPI = function() {
                         ]
                     },
                     {
-                        "type": "postback",
-                        "title": "Default Fallback",
-                        "payload": "nothing to see"
+                        "title": "Other stuff",
+                        "type": "nested",
+                        "call_to_actions": [
+                            {
+                                "type": "postback",
+                                "title": "Messenger Code",
+                                "payload": "code"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Insights",
+                                "payload": "insights"
+                            }
+                        ]
                     }
                 ]
             },
@@ -161,9 +172,20 @@ exports.testMessengerProfileAPI = function() {
                         ]
                     },
                     {
-                        "type": "postback",
-                        "title": "Standard-Fallback",
-                        "payload": "nothing to see"
+                        "title": "Sonstige Sachen",
+                        "type": "nested",
+                        "call_to_actions": [
+                            {
+                                "type": "postback",
+                                "title": "Messenger Code",
+                                "payload": "code"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Analysen",
+                                "payload": "insights"
+                            }
+                        ]
                     }
                 ]
             }

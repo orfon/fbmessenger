@@ -213,7 +213,7 @@ const processText = function(text, message) {
                 }
             ]);
         }
-    }  else if (strings.contains(text, "insights")) {
+    } else if (strings.contains(text, "insights")) {
         const duatc = bot.getDailyUniqueActiveThreads();
         const duc = bot.getDailyUniqueConversations();
 
@@ -240,6 +240,15 @@ const processText = function(text, message) {
         } else {
             bot.sendTextMessage(message.sender.id, "No daily unique conversation count available, sorry \uD83D\uDE2A");
         }
+    } else if (strings.contains(text, "code")) {
+        const url = bot.getMessengerCode();
+        if (url !== null) {
+            bot.sendImageAttachment(message.sender.id, url);
+        } else {
+            bot.sendTextMessage(message.sender.id, "Could not generate the code, sorry \uD83D\uDE2A");
+        }
+    } else if (strings.contains(text, "get_started")) {
+        bot.sendTextMessage(message.sender.id, "Welcome to the birdie test bot! \uD83D\uDC26");
     } else {
         bot.sendTextMessage(message.sender.id, "Heyo, current time is: " + new Date());
     }
