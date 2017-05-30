@@ -4,6 +4,8 @@ const {FACEBOOK_PAGE_TOKEN, FACEBOOK_PAGE_ID, FACEBOOK_VERIFY_TOKEN} = require("
 const log = require("ringo/logging").getLogger(module.id);
 const response = require("ringo/jsgi/response");
 const strings = require("ringo/utils/strings");
+const dates = require("ringo/utils/dates");
+const numbers = require("ringo/utils/numbers");
 
 const {Path} = require("fs");
 
@@ -210,6 +212,33 @@ const processText = function(text, message) {
                     "payload": "quick:3:" + Date.now()
                 }
             ]);
+        }
+    }  else if (strings.contains(text, "insights")) {
+        const duatc = bot.getDailyUniqueActiveThreads();
+        const duc = bot.getDailyUniqueConversations();
+
+        if (duatc.data.length > 0) {
+            bot.sendTextMessage(message.sender.id, duatc.data[0].description);
+            bot.sendTextMessage(message.sender.id, duatc.data[0].values.map(function(day) {
+                return dates.format(dates.parse(day.end_time), "yyyy-MM-dd") + " => " +
+                    numbers.format(day.value, "#,###,##0", java.util.Locale.ENGLISH);
+            }));
+        } else {
+            bot.sendTextMessage(message.sender.id, "No daily unique active thread count available, sorry \uD83D\uDE2A");
+        }
+
+        if (duc.data.length > 0) {
+            bot.sendTextMessage(message.sender.id, duc.data[0].description);
+            bot.sendTextMessage(message.sender.id, duc.data[0].values.map(function(day) {
+                return dates.format(dates.parse(day.end_time), "yyyy-MM-dd") + " => " +
+                    "TURN_ON: " + numbers.format(day.value.TURN_ON, "#,###,##0", java.util.Locale.ENGLISH) + "\n" +
+                    "TURN_OFF: " + numbers.format(day.value.TURN_OFF, "#,###,##0", java.util.Locale.ENGLISH) + "\n" +
+                    "DELETE: " + numbers.format(day.value.DELETE, "#,###,##0", java.util.Locale.ENGLISH) + "\n" +
+                    "REPORT_SPAM: " + numbers.format(day.value.REPORT_SPAM, "#,###,##0", java.util.Locale.ENGLISH) + "\n" +
+                    "OTHER: " + numbers.format(day.value.OTHER, "#,###,##0", java.util.Locale.ENGLISH);
+            }));
+        } else {
+            bot.sendTextMessage(message.sender.id, "No daily unique conversation count available, sorry \uD83D\uDE2A");
         }
     } else {
         bot.sendTextMessage(message.sender.id, "Heyo, current time is: " + new Date());
