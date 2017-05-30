@@ -1,9 +1,9 @@
 # fbmessenger
 
 Facebook Messenger Bot client for RingoJS. It provides a convenient
-interface to the HTTP-based Messenger platform. The client has been
-tested with RingoJS 0.12 and newer. It supports all API methods of the
-Facebook Graph API v2.7 from July 13, 2016.
+interface to the HTTP-based [Messenger Platform](https://developers.facebook.com/docs/messenger-platform/).
+The client has been tested with RingoJS 1.1.0 and newer. It supports almost all API methods of the
+Messenger Platform 2.0 and the Graph API v2.9 from April 18, 2017.
 
 ## Example
 
@@ -26,6 +26,10 @@ bot.sendButtonTemplate(recipientId, "Hello!", [
 ]);
 
 ```
+
+## API Reference
+
+* [Version 3.0.0](https://github.com/orfon/fbmessenger/wiki/API-Reference-Version-3.0.0)
 
 ## Non-Goals
 
