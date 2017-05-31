@@ -1,7 +1,7 @@
 {
     "name": "fbmessenger",
     "version": "3.0.0",
-    "description": "Bot API for Facebook Messenger.",
+    "description": "Bot API client for Facebook Messenger.",
     "keywords": [
         "facebook",
         "messenger",
@@ -10,9 +10,9 @@
     ],
     "homepage": "https://github.com/orfon/fbmessenger/",
     "author": {
-        "name": "Philipp Naderer",
+        "name": "Philipp Naderer-Puiu",
         "email": "philipp.naderer@orf.at",
-        "web": "http://github.com/orfon/"
+        "web": "http://dev.ORF.at/"
     },
     "contributors": [],
     "repositories": [{
