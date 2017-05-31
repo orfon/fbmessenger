@@ -27,6 +27,8 @@ bot.sendButtonTemplate(recipientId, "Hello!", [
 
 ```
 
+You can also [take a look at the test bot](https://github.com/orfon/fbmessenger/blob/master/test/birdiebot/routes.js) which implements a lot of features of the Messenger Platform.
+
 ## API Reference
 
 * [Version 3.0.0](https://github.com/orfon/fbmessenger/wiki/API-Reference-Version-3.0.0)
